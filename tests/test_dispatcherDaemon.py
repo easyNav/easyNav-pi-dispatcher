@@ -8,6 +8,12 @@
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2014 Joel Tong me@joeltong.org
 
-from easyNav_pi_dispatcher.version import __version__
+from preggy import expect
 
-from easyNav_pi_dispatcher.dispatcherDaemon import DispatcherDaemon
+from easyNav_pi_dispatcher import __version__
+from tests.base import TestCase
+
+
+class VersionTestCase(TestCase):
+    def test_can_init(self):
+    	pass

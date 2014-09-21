@@ -8,6 +8,10 @@
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2014 Joel Tong me@joeltong.org
 
-from easyNav_pi_dispatcher.version import __version__
+class DispatcherDaemon:
 
-from easyNav_pi_dispatcher.dispatcherDaemon import DispatcherDaemon
+	def __init__(self, arg):
+		super(Nav, self).__init__()
+		self.arg = arg
+		pass
+
