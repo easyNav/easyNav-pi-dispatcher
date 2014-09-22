@@ -10,7 +10,7 @@
 
 
 from setuptools import setup, find_packages
-from easyNav_pi_dispatcher import __version__dispatcherClient, dispatcherDaemon
+from easyNav_pi_dispatcher import __version__, dispatcherClient, dispatcherDaemon
 
 tests_require = [
     'mock',
