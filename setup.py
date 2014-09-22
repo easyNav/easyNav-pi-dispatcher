@@ -62,7 +62,7 @@ Dispatcher daemon, and listener module, for inter-process
         'console_scripts': [
             # add cli scripts here in this form:
             # 'easyNav-pi-dispatcher=easyNav_pi_dispatcher.cli:main',
-            'easyNav-pi-dispatcher=easyNav_pi_dispatcher.dispatcherDaemon:main'
+            'easyNav-pi-dispatcher=easyNav_pi_dispatcher.dispatcherDaemon:runMain'
         ],
     },
 )

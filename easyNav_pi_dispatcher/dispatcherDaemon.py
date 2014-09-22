@@ -128,13 +128,12 @@ class DispatcherDaemon:
 
 
 
-
 ######################################################
 ## This is the main function, to show example code.
 ######################################################
 
-
-if __name__ == '__main__':
+## Entry point when calling from command line
+def runMain():
 	def configLogging():
 		logging.getLogger('').handlers = []
 
@@ -146,3 +145,7 @@ if __name__ == '__main__':
 	configLogging()
 	daemon = DispatcherDaemon()
 	daemon.start()
+
+
+if __name__ == '__main__':
+	runMain()

@@ -28,6 +28,14 @@ An interprocess task communication daemon and client for easyNav / Python commun
 Examples can be found in the `/examples` directory.
 
 
+## Installation
+
+To install, use `pip`.
+
+	sudo pip install git+git://github.com/easyNav/easyNav-pi-dispatcher.git
+
+
+
 ## Bugs
 
 File in the bug tracker.
