@@ -53,7 +53,7 @@ Dispatcher daemon, and listener module, for inter-process
         # add your dependencies here
         # remember to use 'package-name>=x.y.z,<x.y+1.0' notation (this way you get bugfixes)
         'smokesignal>=0.5',
-        'zmq>=14.3.1'
+        'pyzmq>=14.3.1'
     ],
     extras_require={
         'tests': tests_require,
