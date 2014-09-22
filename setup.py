@@ -10,7 +10,7 @@
 
 
 from setuptools import setup, find_packages
-from easyNav_pi_dispatcher import __version__
+from easyNav_pi_dispatcher import dispatcherClient, dispatcherDaemon
 
 tests_require = [
     'mock',
@@ -62,6 +62,7 @@ Dispatcher daemon, and listener module, for inter-process
         'console_scripts': [
             # add cli scripts here in this form:
             # 'easyNav-pi-dispatcher=easyNav_pi_dispatcher.cli:main',
+            'easyNav-pi-dispatcher=easyNav_pi_dispatcher.dispatcherDaemon:main'
         ],
     },
 )
