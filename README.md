@@ -16,7 +16,7 @@ An interprocess task communication daemon and client for easyNav / Python commun
 
 1. Ensure that server daemon is running:
 
-	python dispatcherDaemon.py
+	easyNav-pi-dispatcher
 
 2. Integrate client code into python program(s). 
 
