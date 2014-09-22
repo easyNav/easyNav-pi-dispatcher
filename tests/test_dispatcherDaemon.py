@@ -9,11 +9,13 @@
 # Copyright (c) 2014 Joel Tong me@joeltong.org
 
 from preggy import expect
-
-from easyNav_pi_dispatcher import __version__
 from tests.base import TestCase
 
+from easyNav_pi_dispatcher import dispatcherClient
 
-class VersionTestCase(TestCase):
+
+class DaemonTestCase(TestCase):
     def test_can_init(self):
+    	# daemon = easyNav_pi_dispatcher.DispatcherDaemon()
+    	# daemon.start()
     	pass

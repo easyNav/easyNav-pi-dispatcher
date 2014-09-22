@@ -56,7 +56,6 @@ class DispatcherClient:
 		"""
 		self.register()
 		self.setupSocketIn()
-		print 'here'
 		self._active = True
 
 		def runThread():
