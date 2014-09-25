@@ -87,14 +87,17 @@ class DispatcherClient:
 		@return: None
 		"""
 		# socketOut.send("%d %s" % (self.DAEMON_TOPIC, json.dumps(payload)))
-		payload = {
+		data = {
 			'opr': 'send',
 			'from': self.PORT,
 			'to': toPort,
 			'event': event,
 			'payload': json.dumps(payload)
 		}
-		self._socketOut.send(json.dumps(payload))
+		if (self._socketOut is None):
+			logging.error('Tried to send but failed: %s' % json.dumps(data))
+			return
+		self._socketOut.send(json.dumps(data))
 		## Pend until ACK signal is received
 		self._socketOut.recv()
 
