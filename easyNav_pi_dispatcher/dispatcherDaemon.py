@@ -13,6 +13,8 @@ import time
 import json
 import logging
 
+from easyNav_pi_dispatcher import __version__
+
 
 class DispatcherDaemon:
 	"""The DispatcherDaemon is an interprocess standalone daemon for 
@@ -144,6 +146,7 @@ def runMain():
 
 	configLogging()
 	daemon = DispatcherDaemon()
+	logging.info('=== easyNav Pi Dispatcher v%s started ===' % __version__)
 	daemon.start()
 
 
