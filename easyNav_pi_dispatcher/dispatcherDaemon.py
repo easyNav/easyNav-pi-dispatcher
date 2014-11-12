@@ -108,7 +108,7 @@ class DispatcherDaemon:
 			sock.send(json.dumps(payload))
 			logging.debug('Sent payload: %s' % json.dumps(payload))
 		except KeyError, e:
-			logging.error('I tried to send payload but failed. TO: %s' % port)
+			logging.error('Sending error.  PORT=%s' % port)
 		finally:
 			pass
 
