@@ -97,7 +97,11 @@ class DispatcherClient:
 		if (self._socketOut is None):
 			logging.error('Tried to send but failed: %s' % json.dumps(data))
 			return
-		self._socketOut.send(json.dumps(data))
+		try:
+			self._socketOut.send(json.dumps(data))
+		except:  # Catch ZMQ errors (buffer overflow) and fail silently
+			logging.error('Socket down.  Failed to send: %s' % json.dumps(data))
+
 		## Pend until ACK signal is received
 		self._socketOut.recv()
 
@@ -114,7 +118,11 @@ class DispatcherClient:
 			'port': self.PORT
 		}
 		logging.debug('socket initiated')
-		self._socketOut.send(json.dumps(payload))
+		try:
+			self._socketOut.send(json.dumps(payload))
+		except:  # Catch ZMQ errors (buffer overflow) and fail silently
+			logging.error('Socket down.  Failed to send: %s' % json.dumps(payload))
+
 		## Pend until ACK signal is received
 		# TODO: Insert acknowledgement signal here
 		self._socketOut.recv()
