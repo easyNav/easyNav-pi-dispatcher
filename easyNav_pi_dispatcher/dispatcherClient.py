@@ -97,6 +97,7 @@ class DispatcherClient:
 		if (self._socketOut is None):
 			logging.error('Tried to send but failed: %s' % json.dumps(data))
 			return
+			
 		try:
 			self._socketOut.send(json.dumps(data))
 		except:  # Catch ZMQ errors (buffer overflow) and fail silently
