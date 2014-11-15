@@ -100,11 +100,11 @@ class DispatcherClient:
 			
 		try:
 			self._socketOut.send(json.dumps(data))
+			## Pend until ACK signal is received
+			self._socketOut.recv()
 		except:  # Catch ZMQ errors (buffer overflow) and fail silently
 			logging.error('Socket down.  Failed to send: %s' % json.dumps(data))
 
-		## Pend until ACK signal is received
-		self._socketOut.recv()
 
 
 	def register(self):
@@ -121,12 +121,12 @@ class DispatcherClient:
 		logging.debug('socket initiated')
 		try:
 			self._socketOut.send(json.dumps(payload))
+			## Pend until ACK signal is received
+			# TODO: Insert acknowledgement signal here
+			self._socketOut.recv()
 		except:  # Catch ZMQ errors (buffer overflow) and fail silently
 			logging.error('Socket down.  Failed to send: %s' % json.dumps(payload))
 
-		## Pend until ACK signal is received
-		# TODO: Insert acknowledgement signal here
-		self._socketOut.recv()
 
 
 	def setupSocketIn(self):
